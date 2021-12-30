@@ -284,6 +284,9 @@ When you run the tests with the `npm test` command (or `npm t` for short),
 you'll see the results of the test in your console. Jest will report on what is
 working and what is broken and why.
 
+> **Note**: If you see "No tests found related to files changed since last
+> commit." in the test output, press the `a` key to run all the tests.
+
 When you run this lab's test suite with `npm test`, before writing any solution
 code, you'll see output similar to:
 
@@ -452,15 +455,15 @@ import { currentAgeForBirthYear } from "../utils";
 describe("currentAgeForBirthYear", () => {
   it("returns the age of a person based on the year of birth", () => {
     // Arrange
-    const currentYear = new Date().getFullYear()
-    const birthYear = 1984
-    const answer = currentYear - birthYear
+    const currentYear = new Date().getFullYear();
+    const birthYear = 1984;
+    const answer = currentYear - birthYear;
 
     // Act
-    const ageOfPerson = currentAgeForBirthYear(birthYear)
+    const ageOfPerson = currentAgeForBirthYear(birthYear);
 
     // Assert
-    expect(ageOfPerson).to eq(answer)
+    expect(ageOfPerson).toEqual(answer);
   });
 });
 ```
